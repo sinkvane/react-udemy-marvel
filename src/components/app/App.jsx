@@ -1,9 +1,9 @@
-import AppHeader from "../appHeader/AppHeader";
-import RandomChar from "../randomChar/RandomChar";
-import CharList from "../charList/CharList";
-import CharInfo from "../charInfo/CharInfo";
+import AppHeader from "components/appHeader/AppHeader";
+import RandomChar from "components/randomChar/RandomChar";
+import CharList from "components/charList/CharList";
+import CharInfo from "components/charInfo/CharInfo";
 
-import decoration from '../../resources/img/vision.png';
+import decoration from 'resources/img/vision.png';
 
 const App = () => {
     return (
