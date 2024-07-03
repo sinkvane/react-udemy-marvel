@@ -1,4 +1,5 @@
 import AppHeader from "components/appHeader/AppHeader";
+import ErrorBoundary from "components/errorBoundary/ErrorBoundary";
 import RandomChar from "components/randomChar/RandomChar";
 import CharList from "components/charList/CharList";
 import CharInfo from "components/charInfo/CharInfo";
@@ -7,16 +8,15 @@ import decoration from "resources/img/vision.png";
 import { Component } from "react";
 
 class App extends Component {
-
     state = {
-        selectedChar: null
-    }
+        selectedChar: null,
+    };
 
     onCharSelected = (id) => {
         this.setState({
-            selectedChar: id
-        })
-    }
+            selectedChar: id,
+        });
+    };
 
     render() {
         return (
@@ -25,8 +25,10 @@ class App extends Component {
                 <main>
                     <RandomChar />
                     <div className="char__content">
-                        <CharList onCharSelected={ this.onCharSelected } />
-                        <CharInfo charId={ this.state.selectedChar } />
+                        <CharList onCharSelected={this.onCharSelected} />
+                        <ErrorBoundary>
+                            <CharInfo charId={this.state.selectedChar} />
+                        </ErrorBoundary>
                     </div>
                     <img className="bg-decoration" src={decoration} alt="vision" />
                 </main>
